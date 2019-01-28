@@ -11,7 +11,7 @@
 <header>
     <nav>
         <article>
-            <p>OUR <i class="fas fa-book-open"></i> STORIES</p>
+            <p>Our <i class="fas fa-pen-nib"></i> Stories</p>
         </article>
 
         <ul>
@@ -21,26 +21,17 @@
     </nav>
 </header>
 <main>
-    <article>
-        <h3>{{$articles['first']['title']}}</h3>
-        <p>{{$articles['first']['content']}}</p>
-        <a href="#">Read more...</a>
-    </article>
-    <article>
-        <h3>{{$articles['second']['title']}}</h3>
-        <p>{{$articles['second']['content']}}</p>
-        <a href="#">Read more...</a>
-    </article>
-    <article>
-        <h3>{{$articles['third']['title']}}</h3>
-        <p>{{$articles['third']['content']}}</p>
-        <a href="#">Read more...</a>
-    </article>
-    <article>
-        <h3>{{$articles['fourth']['title']}}</h3>
-        <p>{{$articles['fourth']['content']}}</p>
-        <a href="#">Read more...</a>
-    </article>
+    <section>
+        <h1><span>Welcome</span><br> <span>to</span><br> Our <i class="fas fa-pen-nib"></i> Stories</h1>
+        <p>You can <a href="#">share</a> your story with us...</p>
+    </section>
+    @foreach($articles as $article)
+        <article>
+            <h2>{{$article['title']}}</h2>
+            <p>{{$article['content']}}</p>
+            <a href="#">Read more...</a>
+        </article>
+    @endforeach
 </main>
 <footer>
     <article>
