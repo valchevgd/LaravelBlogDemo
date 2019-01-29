@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Pinyon+Script");
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:700');
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script:700");
 
 body {
     font-family:  “Helvetica”, sans-serif ;
@@ -119,8 +119,8 @@ main article a{
     padding: 0 0 10px 120px;
 }
 
-main input,
-main textarea{
+article.contact-form input,
+article.contact-form textarea{
     border-radius: 5px;
     padding: 5px;
     border: none;
