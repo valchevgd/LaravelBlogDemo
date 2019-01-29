@@ -11,7 +11,7 @@
 <header>
     <nav>
         <article>
-            <p>OUR <i class="fas fa-book-open"></i> STORIES</p>
+            <p>Our <i class="fas fa-pen-nib"></i> Stories</p>
         </article>
 
         <ul>
@@ -36,8 +36,20 @@
 
     <article>
         <h3>CONTACT US</h3>
-        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
-            demoralized by the charms of pleasure.</p>
+        <form action="post">
+            <p>
+                <label for="name">Name :</label>
+                <input type="text" id="name" placeholder="Please enter your name...">
+            </p>
+            <p>
+                <label for="Email">Email :</label>
+                <input type="email" id="email" placeholder="Please enter your email...">
+            </p>
+            <p>
+                <label for="message">Message :</label>
+                <textarea id="message" cols="30" rows="10" placeholder="Please enter your message to us..."></textarea>
+            </p>
+        </form>
     </article>
 
 </main>

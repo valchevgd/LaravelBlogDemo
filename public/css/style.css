@@ -119,6 +119,17 @@ main article a{
     padding: 0 0 10px 120px;
 }
 
+main input,
+main textarea{
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+main textarea{
+    margin-top: 5px;
+}
+
 footer{
     padding: 10px;
     background: #E0E0E0;
@@ -133,7 +144,6 @@ footer article:nth-child(1){
 footer article:nth-child(2){
     text-align: right;
 }
-
 
 footer article a i {
     padding: 5px;
