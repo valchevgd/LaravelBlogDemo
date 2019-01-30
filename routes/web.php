@@ -12,6 +12,10 @@
 */
 
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('about', 'AboutController@getAboutAction');
 
 Route::get('/', 'HomeController@getIndexAction');
+
+Route::get('/article_create', 'ArticleController@createArticle');
