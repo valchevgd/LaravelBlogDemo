@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Pinyon+Script");
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:700");
+@import url('https://fonts.googleapis.com/css?family=Bitter');
 
 body {
-    font-family:  “Helvetica”, sans-serif ;
+    font-family:  Bitter, serif ;
     font-size: 16px;
     padding: 0 150px;
 
@@ -41,7 +42,8 @@ header nav ul li a{
 }
 
 header nav ul li a:hover{
-    color: darkslategrey;
+    color: orange;
+
 }
 
 main{
@@ -60,10 +62,13 @@ main section{
 
 
 main section h1{
-    font-family: Dancing Script, serif;
     font-size: 4rem;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     margin: -20px;
+}
+
+h1, h2 {
+    font-family: Dancing Script, serif;
 }
 
 main section p{
@@ -92,8 +97,8 @@ main section p a {
 }
 
 main section p a:hover{
-    color: darkslategrey;
-    border: 2px solid darkslategrey;
+    color: orange;
+    border: 2px solid orange;
 }
 
 main article p{
@@ -119,11 +124,16 @@ main article a{
     padding: 0 0 10px 120px;
 }
 
-article.contact-form input,
-article.contact-form textarea{
+.form input,
+.form textarea{
     border-radius: 5px;
     padding: 5px;
     border: none;
+    margin-top: 5px;
+}
+
+.form textarea{
+    vertical-align: top;
 }
 
 main textarea{
@@ -148,4 +158,39 @@ footer article:nth-child(2){
 footer article a i {
     padding: 5px;
     color: black;
+}
+
+.shear-form{
+    font-size: 1.2rem;
+    background: #F9690E;
+    width: 400px;
+    color: white;
+    margin: 10px auto;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.shear-form h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#title{
+    width: 260px;
+}
+
+.button{
+    font-size: 1em;
+    padding: 7px 15px;
+    border: 2px solid white;
+    border-radius: 7px;
+    background: none;
+    color: white;
+    text-decoration: none;
+}
+
+.button:hover{
+    background: white;
+    color: #F9690E;
 }

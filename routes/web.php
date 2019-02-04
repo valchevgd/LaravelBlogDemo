@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('about', 'AboutController@getAboutAction');
 
+Route::get('/share_story', 'StoryController@getShearStoryAction');
+
+Route::post('/share_story', 'StoryController@getShearStoryAction');
+
 Route::get('/', 'HomeController@getIndexAction');
 
-Route::get('/article_create', 'ArticleController@createArticle');
