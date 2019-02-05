@@ -14,7 +14,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('story_show/{id}', 'StoryController@getStoryAction');
+
 Route::get('about', 'AboutController@getAboutAction');
+
+Route::post('/post_story', 'StoryController@postStoryAction');
 
 Route::get('/share_story', 'StoryController@getShearStoryAction');
 

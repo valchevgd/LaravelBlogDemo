@@ -3,21 +3,19 @@
 @section('title', ' | About')
 
 @section('main')
-    <main>
-
-        <article>
+        <article class="home-main">
             <h3>WHO WE ARE</h3>
             <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
                 demoralized by the charms of pleasure.</p>
         </article>
 
-        <article>
+        <article class="home-main">
             <h3>WHY WE ARE HERE</h3>
             <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
                 demoralized by the charms of pleasure.</p>
         </article>
 
-        <article class="form">
+        <article class="form home-main">
             <h3>CONTACT US</h3>
             <form action="{{action('StoryController@getShearStoryAction')}}" method="post">
                 <p>
@@ -37,5 +35,4 @@
                 <p><button class="button" type="submit">Send</button></p>
             </form>
         </article>
-    </main>
 @endSection

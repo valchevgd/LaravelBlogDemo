@@ -21,9 +21,9 @@
         </ul>
     </nav>
 </header>
-
+<main>
 @yield('main')
-
+</main>
 <footer>
     <article>
         &copy; Copyright valchevgd.
