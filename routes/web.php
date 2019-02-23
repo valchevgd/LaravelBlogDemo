@@ -14,15 +14,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('story_show/{id}', 'StoryController@getStoryAction');
+Route::get('all_stories', 'StoryController@getAllStoriesAction')->name('all_stories');
 
-Route::get('about', 'AboutController@getAboutAction');
+Route::get('story_show/{id}', 'StoryController@getStoryAction')->name('show_story');
 
-Route::post('/post_story', 'StoryController@postStoryAction');
+Route::get('about', 'AboutController@getAboutAction')->name('about');
 
-Route::get('/share_story', 'StoryController@getShearStoryAction');
+Route::post('/post_story', 'StoryController@postStoryAction')->name('post_story');
 
-Route::post('/share_story', 'StoryController@getShearStoryAction');
+Route::get('/share_story', 'StoryController@getShearStoryAction')->name('share_story');
 
 Route::get('/', 'HomeController@getIndexAction');
 

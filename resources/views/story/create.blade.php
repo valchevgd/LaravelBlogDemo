@@ -16,7 +16,7 @@
 
     <section class="shear-form">
         <h2>Share new story</h2>
-        <form class="form" action="{{action('StoryController@postStoryAction')}}" method="post">
+        <form class="form" action="{{route('post_story')}}" method="post">
             <p>
                 <label for="title">Title :</label><br>
                 <input type="text" name="title" id="title" placeholder="Title of your story...">

@@ -16,8 +16,9 @@
 
         <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="/share_story">SHARE</a></li>
-            <li><a href="/about">ABOUT</a></li>
+            <li><a href="{{route('all_stories')}}">ALL STORIES</a></li>
+            <li><a href="{{route('share_story')}}">SHARE</a></li>
+            <li><a href="{{route('about')}}">ABOUT</a></li>
         </ul>
     </nav>
 </header>

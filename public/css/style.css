@@ -9,10 +9,14 @@ body {
 
 }
 
-header * {
+header nav {
     color: #F9690E;
     font-weight: bold;
     font-size: 1.1rem;
+}
+
+header nav a{
+    color: #F9690E;
 }
 
 header article{
@@ -212,9 +216,14 @@ footer article a i {
     border-radius: 10px;
 }
 
-.story h3{
+.story header{
     border-bottom: 1px solid white;
     padding: 5px 0 5px 0;
+}
+
+.story header h3,
+.story header small{
+    color: white;
 }
 
 .story a {

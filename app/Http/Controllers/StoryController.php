@@ -51,4 +51,12 @@ class StoryController extends Controller
 
         return view('story/show')->with('story', $story);
     }
+
+    public function getAllStoriesAction(){
+
+        $stories = Story::all()
+            ->sortByDesc('created_at');
+
+        return view('story/show_all')->with('stories', $stories);
+    }
 }
