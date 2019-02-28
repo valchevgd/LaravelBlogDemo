@@ -11,7 +11,7 @@
 <header>
     <nav>
         <article>
-            <p>Our <i class="fas fa-pen-nib"></i> Stories</p>
+            <a href="/"><p>Our <i class="fas fa-pen-nib"></i> Stories</p></a>
         </article>
 
         <ul>

@@ -14,6 +14,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::post('edit_story/{id}', 'StoryController@postEditStoryAction')->name('edit_story');
+
+Route::get('edit_story/{id}', 'StoryController@getEditStoryAction')->name('edit_story');
+
 Route::get('all_stories', 'StoryController@getAllStoriesAction')->name('all_stories');
 
 Route::get('story_show/{id}', 'StoryController@getStoryAction')->name('show_story');

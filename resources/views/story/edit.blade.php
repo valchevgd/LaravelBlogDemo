@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', ' | Share Story')
+@section('title', ' | Edit Story')
 
 @section('main')
 
@@ -15,22 +15,22 @@
     @endif
 
     <section class="shear-form">
-        <h2>Share new story</h2>
-        <form class="form" action="{{route('post_story')}}" method="post">
+        <h2>Edit your story</h2>
+        <form class="form" action="{{route('edit_story', ['id' => $story->id])}}" method="post">
             <p>
                 <label for="title">Title :</label><br>
-                <input type="text" name="title" id="title" placeholder="Title of your story...">
+                <input type="text" name="title" id="title" value="{{$story->title}}">
             </p>
 
             <p>
                 <label for="content">Your Story :</label><br>
                 <textarea name="story" id="content" cols="50" rows="20"
-                          placeholder="Tell Us About Your Story..."></textarea>
+                          placeholder="Tell Us About Your Story...">{{$story->content}}</textarea>
             </p>
             <p>
-                <a href="/" class="button">Cancel</a>
+                <a href="{{route('show_story', ['id' => $story->id])}}" class="button">Cancel</a>
                 @csrf
-                <button class="button" type="submit">Share Story</button>
+                <button class="button" type="submit">Edit Story</button>
             </p>
         </form>
     </section>

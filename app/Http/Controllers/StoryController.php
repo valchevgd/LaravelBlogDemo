@@ -32,12 +32,10 @@ class StoryController extends Controller
             'story' => 'required'
         ]);
 
-
         $story = new Story();
 
         $story->title = $request->title;
         $story->content = $request->story;
-
 
         $story->save();
 
@@ -58,5 +56,29 @@ class StoryController extends Controller
             ->sortByDesc('created_at');
 
         return view('story/show_all')->with('stories', $stories);
+    }
+
+    public function getEditStoryAction($id){
+
+        $story = Story::find($id);
+
+        return view('story/edit')->with('story', $story);
+    }
+
+    public function postEditStoryAction(Request $request, $id){
+
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'story' => 'required'
+        ]);
+
+        $story = Story::find($id);
+
+        $story->title = $request->title;
+        $story->content = $request->story;
+
+        $story->save();
+
+        return redirect()->route('show_story', $story->id);
     }
 }
