@@ -52,8 +52,7 @@ class StoryController extends Controller
 
     public function getAllStoriesAction(){
 
-        $stories = Story::all()
-            ->sortByDesc('created_at');
+        $stories = Story::orderBy('id', 'desc')->paginate(4);
 
         return view('story/show_all')->with('stories', $stories);
     }

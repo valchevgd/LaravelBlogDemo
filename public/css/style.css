@@ -106,10 +106,16 @@ section.home-main p a:hover{
 }
 
 
-.home-articles{
+.home-articles,
+.all-articles{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.all-articles article:nth-child(1),
+.all-articles article:nth-child(2){
+    margin-bottom: 1rem;
 }
 
 .about-article,
@@ -149,9 +155,10 @@ section.home-main p a:hover{
 .single-article{
     background: #F9690E;
     color: #F0F1F5;
-    padding: 1rem;
-    margin: 1rem;
     border-radius: 0.5rem;
+    padding-left: 1rem;
+    max-width: 46%;
+    flex: 1 1 46%;
 }
 
 .form input,
@@ -287,3 +294,44 @@ section.story p:nth-child(3){
     border-color: red;
     color: white;
 }
+
+.paginator ul{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+
+.paginator ul li{
+    list-style: none;
+    background: #F9690E;
+    border-radius: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    margin-left: 0.3rem;
+}
+
+.paginator ul li:hover {
+    background: orange;
+    cursor: pointer;
+}
+
+.paginator ul li:first-child,
+.paginator ul li:last-child{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+.paginator ul li span,
+.paginator ul li a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: white;
+}
+
+
+
