@@ -65,6 +65,12 @@ class StoryController extends Controller
         return view('story/edit')->with('story', $story);
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function postEditStoryAction(Request $request, $id){
 
         $this->validate($request, [
@@ -80,5 +86,14 @@ class StoryController extends Controller
         $story->save();
 
         return redirect()->route('show_story', $story->id);
+    }
+
+    public function deleteStoryAction($id){
+
+        $story = Story::find($id);
+
+        $story->delete();
+
+        return redirect()->route('index');
     }
 }

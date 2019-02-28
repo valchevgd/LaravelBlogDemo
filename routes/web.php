@@ -14,6 +14,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::post('delete_story/{id}', 'StoryController@deleteStoryAction')->name('delete_story');
+
 Route::post('edit_story/{id}', 'StoryController@postEditStoryAction')->name('edit_story');
 
 Route::get('edit_story/{id}', 'StoryController@getEditStoryAction')->name('edit_story');
@@ -28,5 +30,5 @@ Route::post('/post_story', 'StoryController@postStoryAction')->name('post_story'
 
 Route::get('/share_story', 'StoryController@getShearStoryAction')->name('share_story');
 
-Route::get('/', 'HomeController@getIndexAction');
+Route::get('/', 'HomeController@getIndexAction')->name('index');
 

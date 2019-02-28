@@ -273,3 +273,11 @@ section.story p:nth-child(3){
     display: flex;
     vertical-align: top;
 }
+
+.delete{
+    display: flex;
+}
+
+.delete a{
+    margin-left: auto;
+}
