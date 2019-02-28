@@ -9,10 +9,7 @@ class HomeController extends Controller
 {
     public function getIndexAction()
     {
-
-        $stories = Story::all()
-            ->sortByDesc('created_at')
-            ->take(6);
+        $stories = Story::orderBy('created_at', 'desc')->limit(6)->get();
 
         return view('home/home')->with('stories', $stories);
     }
