@@ -281,3 +281,9 @@ section.story p:nth-child(3){
 .delete a{
     margin-left: auto;
 }
+
+.delete input:hover {
+    background: red;
+    border-color: red;
+    color: white;
+}
