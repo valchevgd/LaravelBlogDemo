@@ -3,19 +3,21 @@
 @section('title', ' | About')
 
 @section('main')
-        <article class="home-main">
+
+    <section class="about">
+        <article class="about-article">
             <h3>WHO WE ARE</h3>
             <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
                 demoralized by the charms of pleasure.</p>
         </article>
 
-        <article class="home-main">
+        <article class="about-article">
             <h3>WHY WE ARE HERE</h3>
             <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
                 demoralized by the charms of pleasure.</p>
         </article>
 
-        <article class="form home-main">
+        <article class="form about-article">
             <h3>CONTACT US</h3>
             <form action="{{action('StoryController@getShearStoryAction')}}" method="post">
                 <p>
@@ -32,7 +34,10 @@
                               placeholder="Please enter your message to us..."></textarea>
                 </p>
                 @csrf
-                <p><button class="button" type="submit">Send</button></p>
+                <p>
+                    <button class="button" type="submit">Send</button>
+                </p>
             </form>
         </article>
+    </section>
 @endSection
