@@ -16,16 +16,22 @@
 
         <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="{{route('all_stories')}}">ALL STORIES</a></li>
-            <li><a href="{{route('share_story')}}">SHARE</a></li>
+            @if(Auth::check())
+                <li><a href="{{route('all_stories')}}">ALL STORIES</a></li>
+                <li><a href="{{route('share_story')}}">SHARE</a></li>
+            @endif
             <li><a href="{{route('about')}}">ABOUT</a></li>
-            <li><a href="{{route('user_register')}}">REGISTER</a></li>
-            <li><a href="{{route('user_login')}}">LOGIN</a></li>
+            @if(Auth::check())
+                <li><a href="{{route('user_logout')}}">LOGOUT</a></li>
+            @else
+                <li><a href="{{route('user_register')}}">REGISTER</a></li>
+                <li><a href="{{route('user_login')}}">LOGIN</a></li>
+            @endif
         </ul>
     </nav>
 </header>
 <main>
-@yield('main')
+    @yield('main')
 </main>
 <footer>
     <article>
