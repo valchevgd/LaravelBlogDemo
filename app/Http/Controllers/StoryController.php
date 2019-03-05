@@ -12,6 +12,12 @@ use Illuminate\Http\Request;
 class StoryController extends Controller
 {
 
+
+    public function __construct()
+    {
+        $this->middleware('user');
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

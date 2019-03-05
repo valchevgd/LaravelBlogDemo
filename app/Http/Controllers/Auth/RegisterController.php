@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/user_login';
 
     /**
      * Create a new controller instance.
@@ -40,30 +41,41 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function getRegisterAction(){
+    public function getRegisterAction()
+    {
 
         return view('user/register');
+    }
+
+    public function postRegisterAction()
+    {
+        $this->validator($_POST);
+        $this->create($_POST);
+
+
+        return redirect()->route('user_login');
     }
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param  array $data
+     * @return array
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
+        ])->validate();
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
