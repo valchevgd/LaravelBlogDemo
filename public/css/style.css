@@ -197,6 +197,8 @@ footer article a i {
     color: black;
 }
 
+.form-login,
+.form-register,
 .shear-form{
     font-size: 1.2rem;
     background: #F9690E;
@@ -206,6 +208,22 @@ footer article a i {
     padding: 15px 30px;
     border-radius: 10px;
     text-align: center;
+}
+
+.form-login ,
+.form-register{
+    width: 60%;
+}
+
+.form-login label,
+.form-register label{
+    display: block;
+    font-size: 1rem;
+}
+
+.form-login input,
+.form-register input{
+    width: 50%;
 }
 
 .shear-form h2{
@@ -332,6 +350,8 @@ section.story p:nth-child(3){
     text-decoration: none;
     color: white;
 }
+
+
 
 
 

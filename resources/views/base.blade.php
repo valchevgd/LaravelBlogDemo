@@ -19,6 +19,8 @@
             <li><a href="{{route('all_stories')}}">ALL STORIES</a></li>
             <li><a href="{{route('share_story')}}">SHARE</a></li>
             <li><a href="{{route('about')}}">ABOUT</a></li>
+            <li><a href="{{route('user_register')}}">REGISTER</a></li>
+            <li><a href="{{route('user_login')}}">LOGIN</a></li>
         </ul>
     </nav>
 </header>

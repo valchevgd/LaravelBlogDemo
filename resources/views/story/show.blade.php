@@ -14,7 +14,6 @@
             <input type="submit" class="button" value="Delete Story">
             <a href="{{route('edit_story', ['id' => $story->id])}}" class="button">Edit Story</a>
             <a href="{{route('all_stories')}}" class="button">All Stories</a>
-
             @csrf
         </form>
 
