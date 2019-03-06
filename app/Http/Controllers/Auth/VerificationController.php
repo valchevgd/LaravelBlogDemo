@@ -13,8 +13,8 @@ class VerificationController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller is responsible for handling email verification for any
-    | user that recently registered with the application. Emails may also
-    | be re-sent if the user didn't receive the original email message.
+    | auth that recently registered with the application. Emails may also
+    | be re-sent if the auth didn't receive the original email message.
     |
     */
 
@@ -34,7 +34,7 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('user');
+        $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }

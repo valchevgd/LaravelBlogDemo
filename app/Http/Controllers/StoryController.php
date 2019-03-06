@@ -15,7 +15,7 @@ class StoryController extends Controller
 
     public function __construct()
     {
-        $this->middleware('user');
+        $this->middleware('auth');
     }
 
     /**

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 
 class LoginController extends Controller
@@ -44,7 +43,7 @@ class LoginController extends Controller
     public function getLoginAction()
     {
 
-        return view('user/login');
+        return view('auth/login');
     }
 
     public function postLoginAction()
@@ -52,7 +51,7 @@ class LoginController extends Controller
 
         $userData = array(
             'email' => $_POST['email'],
-            'password' => $_POST['password']
+            'passwords' => $_POST['passwords']
         );
 
         if (Auth::attempt($userData)) {
