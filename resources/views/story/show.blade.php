@@ -6,6 +6,7 @@
     <section class="story">
         <header>
             <h3>{{$story->title}}</h3>
+            <p>Category: {{$story->category->name}}</p>
             <small>Posted on: {{$story->created_at}} | Last update on: {{$story->updated_at}}</small>
         </header>
         <p>{{$story->content}}</p>

@@ -131,6 +131,10 @@ section.home-main p a:hover{
     border-radius: 1rem;
     flex: 1 1 29%;
 }
+.single-article small,
+.home-article small{
+    display: block;
+}
 
 .home-paragraph{
     height: auto;
