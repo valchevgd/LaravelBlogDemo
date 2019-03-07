@@ -51,8 +51,9 @@ class LoginController extends Controller
 
         $userData = array(
             'email' => $_POST['email'],
-            'passwords' => $_POST['passwords']
+            'password' => $_POST['password']
         );
+
 
         if (Auth::attempt($userData)) {
 

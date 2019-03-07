@@ -5,7 +5,7 @@
 @section('main')
     <article class="form form-login">
         <h3>Reset My Password</h3>
-        <form action="{{url('passwords/reset')}}" method="post">
+        <form action="{{url('password')}}" method="post">
 
             <input type="hidden" value="{{$token}}">
             <p>
