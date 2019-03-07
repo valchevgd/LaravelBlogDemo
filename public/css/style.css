@@ -173,6 +173,10 @@ section.home-main p a:hover{
     margin-top: 5px;
 }
 
+.form label{
+    display: block;
+}
+
 .form textarea{
     vertical-align: top;
 }

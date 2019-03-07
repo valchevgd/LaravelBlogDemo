@@ -18,12 +18,25 @@
         <h2>Edit your story</h2>
         <form class="form" action="{{route('edit_story', ['id' => $story->id])}}" method="post">
             <p>
-                <label for="title">Title :</label><br>
+                <label for="title">Title :</label>
                 <input type="text" name="title" id="title" value="{{$story->title}}">
             </p>
 
             <p>
-                <label for="content">Your Story :</label><br>
+                <label for="category_id">Category :</label>
+                <select name="category_id" id="category_id">
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}"
+                                @if ($category->id === $story->category_id)
+                                selected
+                                @endif>
+                            {{$category->name}}</option>
+                    @endforeach
+                </select>
+            </p>
+
+            <p>
+                <label for="content">Your Story :</label>
                 <textarea name="story" id="content" cols="50" rows="20"
                           placeholder="Tell Us About Your Story...">{{$story->content}}</textarea>
             </p>

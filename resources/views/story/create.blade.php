@@ -18,12 +18,22 @@
         <h2>Share new story</h2>
         <form class="form" action="{{route('post_story')}}" method="post">
             <p>
-                <label for="title">Title :</label><br>
+                <label for="title">Title :</label>
                 <input type="text" name="title" id="title" placeholder="Title of your story...">
             </p>
 
             <p>
-                <label for="content">Your Story :</label><br>
+                <label for="category_id">Category :</label>
+                <select name="category_id" id="category_id">
+                    <option value=""></option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+            </p>
+
+            <p>
+                <label for="content">Your Story :</label>
                 <textarea name="story" id="content" cols="50" rows="20"
                           placeholder="Tell Us About Your Story..."></textarea>
             </p>

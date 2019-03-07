@@ -3,9 +3,7 @@
 
 namespace App\Http\Controllers;
 
-
-
-
+use App\Category;
 use App\Story;
 use Illuminate\Http\Request;
 
@@ -23,7 +21,9 @@ class StoryController extends Controller
      */
     public function getShearStoryAction(){
 
-        return view('story/create');
+        $categories = Category::all();
+
+        return view('story/create')->with('categories', $categories);
     }
 
     /**
@@ -35,13 +35,15 @@ class StoryController extends Controller
 
         $this->validate($request, [
             'title' => 'required|max:255',
-            'story' => 'required'
+            'story' => 'required',
+            'category_id' => 'required|integer'
         ]);
 
         $story = new Story();
 
         $story->title = $request->title;
         $story->content = $request->story;
+        $story->category_id = $request->category_id;
 
         $story->save();
 
@@ -66,8 +68,9 @@ class StoryController extends Controller
     public function getEditStoryAction($id){
 
         $story = Story::find($id);
+        $categories = Category::all();
 
-        return view('story/edit')->with('story', $story);
+        return view('story/edit')->with('story', $story)->with('categories', $categories);
     }
 
     /**
@@ -80,13 +83,15 @@ class StoryController extends Controller
 
         $this->validate($request, [
             'title' => 'required|max:255',
-            'story' => 'required'
+            'story' => 'required',
+            'category_id' => 'required|integer'
         ]);
 
         $story = Story::find($id);
 
         $story->title = $request->title;
         $story->content = $request->story;
+        $story->category_id = $request->category_id;
 
         $story->save();
 
