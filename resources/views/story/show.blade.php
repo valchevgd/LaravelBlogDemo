@@ -7,6 +7,11 @@
         <header>
             <h3>{{$story->title}}</h3>
             <p>Category: {{$story->category->name}}</p>
+            <p>
+                @foreach($tags as $tag)
+                    <small>{{$tag['name']}}|</small>
+                @endforeach
+            </p>
             <small>Posted on: {{$story->created_at}} | Last update on: {{$story->updated_at}}</small>
         </header>
         <p>{{$story->content}}</p>

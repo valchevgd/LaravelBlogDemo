@@ -33,6 +33,14 @@
             </p>
 
             <p>
+                <label>Tags :</label>
+                @foreach($tags as $tag)
+                    <span>{{$tag->name}}</span>
+                    <input type="checkbox" name="tags[]" value="{{$tag->id}}">
+                @endforeach
+            </p>
+
+            <p>
                 <label for="content">Your Story :</label>
                 <textarea name="story" id="content" cols="50" rows="20"
                           placeholder="Tell Us About Your Story..."></textarea>

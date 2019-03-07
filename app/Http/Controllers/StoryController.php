@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Story;
+use App\Tag;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class StoryController extends Controller
 {
@@ -22,8 +24,9 @@ class StoryController extends Controller
     public function getShearStoryAction(){
 
         $categories = Category::all();
+        $tags = Tag::all();
 
-        return view('story/create')->with('categories', $categories);
+        return view('story/create')->with('categories', $categories)->with('tags', $tags);
     }
 
     /**
@@ -47,6 +50,12 @@ class StoryController extends Controller
 
         $story->save();
 
+        if ($request->tags){
+            $story->tags()->sync($request->tags);
+        }else{
+            $story->tags()->sync([]);
+        }
+
         return redirect()->action('HomeController@getIndexAction');
     }
 
@@ -54,8 +63,10 @@ class StoryController extends Controller
     public function getStoryAction($id){
 
         $story = Story::find($id);
+        $tags = $story->tags->toArray();
 
-        return view('story/show')->with('story', $story);
+        return view('story/show')->with('story', $story)
+            ->with('tags', $tags);
     }
 
     public function getAllStoriesAction(){
@@ -69,8 +80,11 @@ class StoryController extends Controller
 
         $story = Story::find($id);
         $categories = Category::all();
+        $tags = Tag::all();
+        $storyTags = $story->tags->toArray();
 
-        return view('story/edit')->with('story', $story)->with('categories', $categories);
+        return view('story/edit')->with('story', $story)->with('categories', $categories)
+            ->with('tags', $tags)->with('storyTags', $storyTags);
     }
 
     /**
@@ -94,6 +108,12 @@ class StoryController extends Controller
         $story->category_id = $request->category_id;
 
         $story->save();
+
+        if ($request->tags){
+            $story->tags()->sync($request->tags);
+        }else{
+            $story->tags()->sync([]);
+        }
 
         return redirect()->route('show_story', $story->id);
     }
