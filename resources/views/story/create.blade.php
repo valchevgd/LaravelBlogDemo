@@ -32,11 +32,11 @@
                 </select>
             </p>
 
-            <p>
+            <p class="tag">
                 <label>Tags :</label>
                 @foreach($tags as $tag)
-                    <span>{{$tag->name}}</span>
-                    <input type="checkbox" name="tags[]" value="{{$tag->id}}">
+                    <label for="{{$tag->name}}">{{$tag->name}}</label>
+                    <input type="checkbox" name="tags[]"  id="{{$tag->name}}" value="{{$tag->id}}">
                 @endforeach
             </p>
 

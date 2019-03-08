@@ -359,7 +359,6 @@ section.story p:nth-child(3){
     color: white;
 }
 
-
-
-
-
+.tag label:not(:first-child) {
+    display: inline-block;
+}

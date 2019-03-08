@@ -35,11 +35,11 @@
                 </select>
             </p>
 
-            <p>
+            <p class="tag">
                 <label>Tags :</label>
                 @foreach($tags as $tag)
-                    <span>{{$tag->name}}</span>
-                    <input type="checkbox" name="tags[]" value="{{$tag->id}}"
+                    <label for="{{$tag->name}}">{{$tag->name}}</label>
+                    <input type="checkbox" id="{{$tag->name}}" name="tags[]" value="{{$tag->id}}"
                            @foreach($storyTags as $inTag)
                            @if($tag->id === $inTag['id'])
                            checked
