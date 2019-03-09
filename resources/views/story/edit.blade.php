@@ -40,7 +40,7 @@
                 @foreach($tags as $tag)
                     <label for="{{$tag->name}}">{{$tag->name}}</label>
                     <input type="checkbox" id="{{$tag->name}}" name="tags[]" value="{{$tag->id}}"
-                           @foreach($storyTags as $inTag)
+                           @foreach($story->tags as $inTag)
                            @if($tag->id === $inTag['id'])
                            checked
                             @endif

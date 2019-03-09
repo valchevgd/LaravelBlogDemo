@@ -81,10 +81,10 @@ class StoryController extends Controller
         $story = Story::find($id);
         $categories = Category::all();
         $tags = Tag::all();
-        $storyTags = $story->tags->toArray();
+
 
         return view('story/edit')->with('story', $story)->with('categories', $categories)
-            ->with('tags', $tags)->with('storyTags', $storyTags);
+            ->with('tags', $tags);
     }
 
     /**
