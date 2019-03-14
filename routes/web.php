@@ -48,6 +48,7 @@ Route::group(['middleware' => ['web']], function (){
 
     //About route
     Route::get('about', 'AboutController@getAboutAction')->name('about');
+    Route::post('about', 'AboutController@postEmailAction')->name('send_email');
 
     //Index (Home page) route
     Route::get('/', 'HomeController@getIndexAction')->name('index');
