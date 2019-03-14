@@ -362,3 +362,21 @@ section.story p:nth-child(3){
 .tag label:not(:first-child) {
     display: inline-block;
 }
+
+.comment-form{
+    margin-top: 3rem;
+}
+
+.comment-form button{
+    display: block;
+    margin-top: 1rem;
+}
+
+.comment{
+    border-bottom: 1px solid white;
+    margin-top: 0.5rem;
+}
+
+.comment p {
+    margin: 0.3rem 0;
+}

@@ -26,6 +26,9 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset.token');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+    //Comments route
+    Route::post('comment/{story_id}', 'CommentController@postCommentAction')->name('add_comment');
+
     //Logout route
     Route::get('auth/logout', 'Auth\LoginController@getLogoutAction')->name('user_logout');
 
