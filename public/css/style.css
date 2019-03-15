@@ -218,6 +218,10 @@ footer article a i {
     text-align: center;
 }
 
+.shear-form{
+    width: 55vw;
+}
+
 .form-login ,
 .form-register{
     width: 60%;
