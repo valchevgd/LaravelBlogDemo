@@ -7,6 +7,7 @@ use App\Category;
 use App\Story;
 use App\Tag;
 use Illuminate\Http\Request;
+use Mews\Purifier\Facades\Purifier;
 use function MongoDB\BSON\toJSON;
 
 class StoryController extends Controller
@@ -45,7 +46,7 @@ class StoryController extends Controller
         $story = new Story();
 
         $story->title = $request->title;
-        $story->content = $request->story;
+        $story->content = Purifier::clean($request->story);;
         $story->category_id = $request->category_id;
 
         $story->save();
@@ -104,7 +105,7 @@ class StoryController extends Controller
         $story = Story::find($id);
 
         $story->title = $request->title;
-        $story->content = $request->story;
+        $story->content = Purifier::clean($request->story);
         $story->category_id = $request->category_id;
 
         $story->save();
