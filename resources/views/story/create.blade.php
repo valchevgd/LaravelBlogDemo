@@ -14,13 +14,6 @@
         </div>
     @endif
 
-    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
-    <script>tinymce.init({
-            selector: 'textarea',
-            statusbar: false,
-            menubar: false
-        });</script>
-
     <section class="shear-form">
         <h2>Share new story</h2>
         <form class="form" action="{{route('post_story')}}" method="post">
@@ -49,7 +42,7 @@
 
             <p>
                 <label for="content">Your Story :</label>
-                <textarea name="story" id="content" cols="50" rows="20"
+                <textarea name="story" id="content" cols="70" rows="20"
                           placeholder="Tell Us About Your Story..."></textarea>
             </p>
             <p>

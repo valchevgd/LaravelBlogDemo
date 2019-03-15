@@ -7,8 +7,8 @@ use App\Category;
 use App\Story;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Mews\Purifier\Facades\Purifier;
-use function MongoDB\BSON\toJSON;
 
 class StoryController extends Controller
 {
@@ -48,6 +48,7 @@ class StoryController extends Controller
         $story->title = $request->title;
         $story->content = Purifier::clean($request->story);;
         $story->category_id = $request->category_id;
+        $story->author_id = Auth::user()->id;
 
         $story->save();
 
