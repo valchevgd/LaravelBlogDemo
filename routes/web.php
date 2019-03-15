@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function (){
 
     //Stories (Posts) route
     Route::post('delete_story/{id}', 'StoryController@deleteStoryAction')->name('delete_story');
+    Route::get('delete_story/{id}', 'StoryController@getDeleteStoryAction')->name('delete_story');
     Route::post('edit_story/{id}', 'StoryController@postEditStoryAction')->name('edit_story');
     Route::get('edit_story/{id}', 'StoryController@getEditStoryAction')->name('edit_story');
     Route::get('all_stories', 'StoryController@getAllStoriesAction')->name('all_stories');

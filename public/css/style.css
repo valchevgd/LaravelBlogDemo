@@ -384,3 +384,50 @@ section.story p:nth-child(3){
 .comment p {
     margin: 0.3rem 0;
 }
+
+.profile{
+    background: #F9690E;
+    width: 65vw;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    border-radius: 1rem;
+}
+
+.profile section{
+    width: 50%;
+    padding: 2rem;
+}
+
+.my-stories{
+    padding: 1rem;
+}
+
+.my-story{
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5rem;
+}
+
+.my-story div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.my-story div a{
+    background: #F0F1F5;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.my-story div a:first-child{
+    color: mediumblue;
+}
+
+.my-story div a:nth-child(2){
+    color: green;
+}
+
+.my-story div a:nth-child(3){
+    color: red;
+}
+

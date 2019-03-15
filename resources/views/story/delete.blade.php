@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', ' | A Story')
+@section('title', ' | Delete Story')
 
 @section('main')
     <section class="story">
@@ -9,7 +9,7 @@
             <p>Posted by: {!! $story->author['name'] !!}</p>
             <p>Category: {{$story->category->name}}</p>
             <p>
-                @foreach($tags as $tag)
+                @foreach($story->tags as $tag)
                     <small>{{$tag['name']}}|</small>
                 @endforeach
             </p>
@@ -17,8 +17,10 @@
         </header>
         <p>{!! $story->content !!}</p>
 
-        <a href="{{route('all_stories')}}" class="button">All Stories</a>
-
+        <form action="{{route('delete_story', ['id' => $story->id])}}" method="post">
+            <button type="submit" class="button">Delete Stories</button>
+            @csrf
+        </form>
 
         <h4>Comments:</h4>
         @foreach($story->comments as $comment)
@@ -29,15 +31,5 @@
                 <p>{{$comment->content}}</p>
             </section>
         @endforeach
-
-
-        <form class="form comment-form" action="{{route('add_comment', ['id' => $story->id])}}" method="post">
-            <label for="comment">Add a Comment:</label>
-            <textarea name="comment" id="comment" cols="50" rows="5" placeholder="Add your Comment here..."></textarea>
-            <button class="button">Add Comment</button>
-            @csrf
-        </form>
-
-
     </section>
 @endsection

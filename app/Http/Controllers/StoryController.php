@@ -120,12 +120,19 @@ class StoryController extends Controller
         return redirect()->route('show_story', $story->id);
     }
 
+    public function getDeleteStoryAction($id){
+
+        $story = Story::find($id);
+
+        return view('story/delete')->with('story', $story);
+    }
+
     public function deleteStoryAction($id){
 
         $story = Story::find($id);
 
         $story->delete();
 
-        return redirect()->route('index');
+        return redirect()->route('my_profile');
     }
 }
