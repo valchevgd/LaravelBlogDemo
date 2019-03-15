@@ -22,6 +22,7 @@
             @endif
             <li><a href="{{route('about')}}">ABOUT</a></li>
             @if(Auth::check())
+                <li><a href="{{route('my_profile')}}">MY PROFILE</a></li>
                 <li><a href="{{route('user_logout')}}">LOGOUT</a></li>
             @else
                 <li><a href="{{route('user_register')}}">REGISTER</a></li>
