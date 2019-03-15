@@ -14,6 +14,13 @@
         </div>
     @endif
 
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+    <script>tinymce.init({
+            selector: 'textarea',
+            statusbar: false,
+            menubar: false,
+        });</script>
+
     <section class="shear-form">
         <h2>Edit your story</h2>
         <form class="form" action="{{route('edit_story', ['id' => $story->id])}}" method="post">

@@ -14,6 +14,13 @@
         </div>
     @endif
 
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+    <script>tinymce.init({
+            selector: 'textarea',
+            statusbar: false,
+            menubar: false
+        });</script>
+
     <section class="shear-form">
         <h2>Share new story</h2>
         <form class="form" action="{{route('post_story')}}" method="post">
@@ -36,7 +43,7 @@
                 <label>Tags :</label>
                 @foreach($tags as $tag)
                     <label for="{{$tag->name}}">{{$tag->name}}</label>
-                    <input type="checkbox" name="tags[]"  id="{{$tag->name}}" value="{{$tag->id}}">
+                    <input type="checkbox" name="tags[]" id="{{$tag->name}}" value="{{$tag->id}}">
                 @endforeach
             </p>
 

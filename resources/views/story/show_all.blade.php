@@ -11,7 +11,7 @@
                     <small>Category: {{$story->category->name}}</small>
                     <small>Posted on: {{$story->created_at}}</small>
                 </header>
-                <p>{{substr($story->content, 0,200).'...'}}</p>
+                <p>{!! substr($story->content, 0,200).'...' !!}</p>
                 <a href="{{route('show_story', ['id' => $story->id])}}">Read more...</a>
             </article>
         @endforeach

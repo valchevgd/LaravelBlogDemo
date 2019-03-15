@@ -17,7 +17,7 @@
                     <small>Posted on: {{$story->created_at}}</small>
                 </header>
                 <div class="home-paragraph">
-                    <p>{{substr($story->content, 0,250).'...'}}</p>
+                    <p>{!! substr($story->content, 0,250).'...' !!}</p>
                 </div>
                 <a href="{{route('show_story', ['id' => $story->id])}}">Read more...</a>
             </article>

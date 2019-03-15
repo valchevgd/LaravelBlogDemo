@@ -14,7 +14,7 @@
             </p>
             <small>Posted on: {{$story->created_at}} | Last update on: {{$story->updated_at}}</small>
         </header>
-        <p>{{$story->content}}</p>
+        <p>{!! $story->content !!}</p>
 
         <form class="delete" action="{{route('delete_story', ['id' => $story->id])}}" method="post">
             <input type="submit" class="button" value="Delete Story">
