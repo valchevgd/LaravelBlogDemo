@@ -6,6 +6,11 @@
     <section class="profile">
         <section id="profile">
             <h3>Hello, {{Auth::user()->name}}!</h3>
+            <form action="{{route('upload_picture')}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="pic" accept="image/*">
+                <input type="submit">
+                @csrf
+            </form>
         </section>
         <section class="my-stories">
             <h3>My Stories</h3>

@@ -28,6 +28,7 @@ Route::group(['middleware' => ['web']], function (){
 
     //User (Profile) route
     Route::get('my_profile', 'UserController@getMyProfileAction')->name('my_profile');
+    Route::post('upload_picture', 'UserController@postProfilePictureAction')->name('upload_picture');
 
     //Comments route
     Route::post('comment/{story_id}', 'CommentController@postCommentAction')->name('add_comment');
